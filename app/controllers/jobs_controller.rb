@@ -72,3 +72,4 @@ class JobsController < ApplicationController
       params.fetch(:job, {})
     end
 end
+
