@@ -69,23 +69,7 @@ class BoatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boat_params
-      params.fetch(:boat, {}).permit(:photo, :boat_id)
-
-        
-
- 
-
-
-
-
-
-            
-            
-
-
-
-
-
+      params.fetch(:boat, {}).permit(:name, :containers, :location, :photo)
     
     end
 end

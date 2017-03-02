@@ -25,6 +25,11 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = @current_user.jobs.new(job_params)
+    # Find all the boat ids in the database 
+    boat_ids = Boat.pluck(:id) # [1,2,3]
+    # Select a random boat Id from the boat ids
+    random_boat_id = boat_ids.sample # 2
+    @job.boats << Boat.find(random_boat_id) # Boat.find(2)
 
     respond_to do |format|
       if @job.save
@@ -69,6 +74,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.fetch(:job, {})
+      params.fetch(:job, {}).permit( :description, :origin, :destination, :cost, :amount)
     end
 end

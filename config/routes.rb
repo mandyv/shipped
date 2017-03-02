@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
+  root to: "boats#index"
   resources :jobs
   resources :boats
+
 	get '/login', to: 'sessions#new'
 
 	post '/login', to: 'sessions#create'

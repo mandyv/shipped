@@ -12,9 +12,9 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.name %></td>
         <td><%= job.description %></td>
         <td><%= job.origin %></td>
+        <td><%= job.destination %></td>
         <td><%= job.cost %></td>
         <td><%= job.amount %></td>
         <td><%= link_to 'Show', job %></td>

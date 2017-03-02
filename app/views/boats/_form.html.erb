@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= f.label :photo, "Upload Photo" %>        
+  <%= f.file_field :photo %>
+  <br>
   <%= f.label :name %>
   <%= f.text_field :name, size: "100x6" %>
   <br>
@@ -18,10 +21,8 @@
   <%= f.number_field :containers, size: "100x6" %>
   <br>
   <%= f.label :location %>
-  <%= f.text_field_tag :location, size: "100x6" %>
+  <%= f.text_field :location, size: "100x6" %>
   <br>
-  <%= f.label :photo, "Upload Photo" %>        
-  <%= f.file_field :photo %>
 
 <div class="actions">
     <%= f.submit %>
