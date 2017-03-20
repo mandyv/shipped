@@ -77,3 +77,4 @@ class JobsController < ApplicationController
       params.fetch(:job, {}).permit( :description, :origin, :destination, :cost, :amount)
     end
 end
+
